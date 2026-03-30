@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/*"
-          target: "/var/www/monkeyhacks-ui/"
+          target: "/var/www/baileyfcross-ui/"
