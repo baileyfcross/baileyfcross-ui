@@ -46,10 +46,10 @@ export default function Hobbies() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8">My Hobbies</h1>
+      <h1 className="text-4xl font-bold text-white-800 mb-8">My Hobbies</h1>
       
       <div className="mb-8">
-        <p className="text-gray-600 text-lg leading-relaxed max-w-3xl">
+        <p className="text-white-600 text-lg leading-relaxed max-w-3xl">
           When I&apos;m not coding, I enjoy exploring various interests and hobbies. 
           These activities help me stay creative, maintain work-life balance, and 
           often provide inspiration for my professional work.
@@ -69,7 +69,7 @@ export default function Hobbies() {
             </p>
             
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">Experience Level:</span>
+              <span className="text-sm font-bold text-gray-800">Experience Level:</span>
               <span className={`px-3 py-1 text-xs rounded-full ${
                 hobby.level === 'Advanced' 
                   ? 'bg-green-100 text-green-800' 
