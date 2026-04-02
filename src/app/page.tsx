@@ -54,7 +54,7 @@ export default function Home() {
           
           <Link href="/hobbies" className="group">
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="text-4xl mb-4">⛷️</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">My Hobbies</h3>
               <p className="text-gray-600">
                 Discover what I enjoy outside of coding and how it influences my work.
