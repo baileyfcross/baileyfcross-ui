@@ -7,7 +7,7 @@ export default function About() {
         <section>
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">Who I Am</h2>
           <p className="text-gray-600 leading-relaxed">
-            Welcome to my portfolio! I'm a passionate developer with a love for creating 
+            Welcome to my portfolio! I&apos;m a passionate developer with a love for creating 
             meaningful digital experiences. This section is where you can share your 
             background, skills, and what drives you professionally.
           </p>
@@ -25,7 +25,7 @@ export default function About() {
         <section>
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">Skills & Technologies</h2>
           <div className="flex flex-wrap gap-2 mt-4">
-            {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'Git'].map((skill) => (
+            {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'Git', 'Neo4j', 'Graph Databases', 'Data Pipelines', 'HTML/CSS', 'Regex', 'Typeahead', 'Tailwind CSS'].map((skill) => (
               <span 
                 key={skill} 
                 className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
