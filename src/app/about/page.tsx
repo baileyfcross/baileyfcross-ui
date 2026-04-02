@@ -19,8 +19,8 @@ export default function About() {
             I started out as a self-taught programmer, with an intrest in neurophysiology and psychology.
             During my freshman year of college at Siena, I started as a psychology major with an end goal of
             going to PA school. However, I quickly found myself drawn back to the world of computers and programming.
-            After taking my first computer scince class, I was hooked. I switched my major to computer science
-            and have been on that journy ever since. If you want to know more about my projects or story, feel free
+            After taking my first computer science class, I was hooked. I switched my major to computer science
+            and have been on that journey ever since. If you want to know more about my projects or story, feel free
             to reach out to me. 
           </p>
         </section>
