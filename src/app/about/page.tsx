@@ -8,17 +8,20 @@ export default function About() {
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">Who I Am</h2>
           <p className="text-gray-600 leading-relaxed">
             Welcome to my portfolio! I&apos;m a passionate developer with a love for creating 
-            meaningful digital experiences. This section is where you can share your 
-            background, skills, and what drives you professionally.
+            meaningful digital experiences. With a background in software engineering, I apply everything that I do with a 
+            philosophy of learning and iterative design.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">My Journey</h2>
           <p className="text-gray-600 leading-relaxed">
-            Here you can describe your professional journey, education, and key experiences 
-            that have shaped who you are today. Feel free to customize this content to 
-            reflect your unique story.
+            I started out as a self-taught programmer, with an intrest in neurophysiology and psycology.
+            During my freshman year of college at Siena, I started as a psychology major with an end goal of
+            going to PA school. However, I quickly found myself drawn back to the world of computers and programming.
+            After taking my first computer scince class, I was hooked. I switched my major to computer science
+            and have been on that journy ever since. If you want to know more about my projects or story, feel free
+            to reach out to me. 
           </p>
         </section>
 
