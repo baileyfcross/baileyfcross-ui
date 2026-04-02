@@ -27,15 +27,33 @@ export default function About() {
 
         <section>
           <h2 className="text-2xl font-semibold text-white-700 mb-4">Skills & Technologies</h2>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'Git', 'Neo4j', 'Graph Databases', 'Data Pipelines', 'HTML/CSS', 'Regex', 'Typeahead', 'Tailwind CSS'].map((skill) => (
-              <span 
-                key={skill} 
-                className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
-              >
-                {skill}
-              </span>
-            ))}
+
+          <div className="mb-4">
+            <h3 className="text-lg font-medium text-white-600 mb-2">Proficient In</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Angular', 'Agile', 'Java', 'TypeScript', 'HTML/CSS/JavaScript', 'Microsoft Suite', 'Oracle DBMS', 'SQL', 'Git', 'GitHub', 'GitLab', 'Unix', 'IntelliJ', 'Jira', 'Confluence', 'Spring', 'Spring Boot'].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-medium text-white-600 mb-2">Familiar With</h3>
+            <div className="flex flex-wrap gap-2">
+              {['AWS', 'Bootstrap', 'C', 'Docker', 'Figma', 'FreeBSD', 'Jenkins', 'Neo4J', 'PHP', 'PHPStorm', 'Python3', 'Swift', 'UX Design', 'Wireframing', 'React', 'Next.js', 'Node.js', 'Graph Databases', 'Data Pipelines', 'Regex', 'Typeahead', 'Tailwind CSS'].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
       </div>

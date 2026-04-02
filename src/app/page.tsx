@@ -69,7 +69,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Technical Skills</h2>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'Git', 'Tailwind CSS'].map((skill) => (
+            {['Angular', 'Java', 'TypeScript', 'HTML/CSS/JavaScript', 'SQL', 'Git', 'Spring Boot', 'React', 'Next.js', 'Tailwind CSS'].map((skill) => (
               <span 
                 key={skill} 
                 className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
