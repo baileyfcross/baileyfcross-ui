@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
-## 🚀 Features
+## Features
 
 - **Modern Stack**: Built with Next.js 16.2, TypeScript, and Tailwind CSS
 - **Responsive Design**: Mobile-first approach with responsive navigation
@@ -14,7 +14,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
   - Projects: Showcase of development work
   - Hobbies: Personal interests and activities
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── src/
@@ -31,7 +31,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 └── tailwind.config.ts        # Tailwind CSS configuration
 ```
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code quality
 
-## 🚀 Deployment
+## Deployment
 
 ### For Ubuntu/Debian Home Server
 
@@ -105,7 +105,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
    }
    ```
 
-## 📝 Customization
+## Customization
 
 ### Content Updates
 
@@ -133,21 +133,3 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Styling**: Tailwind CSS
 - **Package Manager**: npm
 - **Deployment**: Static site generation ready
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Contact
-
-Bailey Cross - [Your Contact Information]
-
-Project Link: [https://github.com/your-username/portfolio](https://github.com/your-username/portfolio)
