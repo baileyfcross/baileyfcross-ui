@@ -54,7 +54,7 @@ export default function Home() {
           
           <Link href="/hobbies" className="group">
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="text-4xl mb-4">⛷️</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">My Hobbies</h3>
               <p className="text-gray-600">
                 Discover what I enjoy outside of coding and how it influences my work.
@@ -69,7 +69,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Technical Skills</h2>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'Git', 'Tailwind CSS'].map((skill) => (
+            {['Angular', 'Java', 'TypeScript', 'HTML/CSS/JavaScript', 'SQL', 'Git', 'Spring Boot', 'React', 'Next.js', 'Tailwind CSS'].map((skill) => (
               <span 
                 key={skill} 
                 className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
