@@ -2,10 +2,10 @@ export default function Hobbies() {
   const hobbies = [
     {
       id: 1,
-      title: "Photography",
-      description: "Capturing moments and exploring the world through my lens. I enjoy landscape and street photography.",
-      icon: "📷",
-      level: "Intermediate"
+      title: "Skiing",
+      description: "Hitting the slopes and enjoying the mountains. Whether groomed trails or backcountry runs, there's nothing like a day on the mountain.",
+      icon: "⛷️",
+      level: "Advanced"
     },
     {
       id: 2,
