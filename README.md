@@ -126,7 +126,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Components**: Update styling in individual component files
 - **Global styles**: Edit `src/app/globals.css`
 
-## 🔧 Technology Stack
+## Technology Stack
 
 - **Framework**: Next.js 16.2 with App Router
 - **Language**: TypeScript
