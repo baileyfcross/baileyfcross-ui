@@ -16,7 +16,7 @@ export default function About() {
         <section>
           <h2 className="text-2xl font-semibold text-white-700 mb-4">My Journey</h2>
           <p className="text-white-600 leading-relaxed">
-            I started out as a self-taught programmer, with an intrest in neurophysiology and psycology.
+            I started out as a self-taught programmer, with an intrest in neurophysiology and psychology.
             During my freshman year of college at Siena, I started as a psychology major with an end goal of
             going to PA school. However, I quickly found myself drawn back to the world of computers and programming.
             After taking my first computer scince class, I was hooked. I switched my major to computer science
