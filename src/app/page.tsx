@@ -5,10 +5,10 @@ export default function Home() {
     <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
       <section className="text-center py-20">
-        <h1 className="text-5xl font-bold text-gray-800 mb-6">
-          Hello, I'm <span className="text-blue-600">Bailey Cross</span>
+        <h1 className="text-5xl font-bold text-white-800 mb-6">
+          Hello, I&apos;m <span className="text-blue-600">Bailey Cross</span>
         </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-blue-600 mb-8 max-w-2xl mx-auto">
           A passionate developer creating meaningful digital experiences. 
           Welcome to my portfolio where I showcase my projects, share my journey, and explore my interests.
         </p>
@@ -21,7 +21,7 @@ export default function Home() {
           </Link>
           <Link 
             href="/about" 
-            className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+            className="border border-gray-300 text-white-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
           >
             Learn About Me
           </Link>
@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Quick Links Section */}
       <section className="py-16">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Explore My World</h2>
+        <h2 className="text-3xl font-bold text-center text-white-800 mb-12">Explore My World</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <Link href="/about" className="group">
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
@@ -47,7 +47,7 @@ export default function Home() {
               <div className="text-4xl mb-4">💻</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">My Projects</h3>
               <p className="text-gray-600">
-                Explore the applications and solutions I've built using various technologies.
+                Explore the applications and solutions I&apos;ve built using various technologies.
               </p>
             </div>
           </Link>
@@ -91,14 +91,19 @@ export default function Home() {
 
       {/* Contact CTA Section */}
       <section className="py-16 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Let's Work Together</h2>
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-          I'm always interested in new opportunities and exciting projects. 
-          Feel free to reach out if you'd like to collaborate or just say hello!
+        <h2 className="text-3xl font-bold text-white-800 mb-4">Let&apos;s Work Together</h2>
+        <p className="text-white-600 mb-8 max-w-2xl mx-auto">
+          I&apos;m always interested in new opportunities and exciting projects. 
+          Feel free to reach out if you&apos;d like to collaborate or just say hello!
         </p>
-        <button className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium">
+        <a
+          href="https://www.linkedin.com/in/baileyfcross"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-white"
+        >
           Get In Touch
-        </button>
+        </a>
       </section>
     </div>
   );

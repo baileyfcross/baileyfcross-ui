@@ -80,8 +80,8 @@ export default function Projects() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       {/* Projects Section */}
-      <h1 className="text-4xl font-bold text-gray-800 mb-2">Projects</h1>
-      <p className="text-gray-500 mb-8">A selection of work I&apos;ve built and contributed to.</p>
+      <h1 className="text-4xl font-bold text-white-800 mb-2">Projects</h1>
+      <p className="text-white-500 mb-8">A selection of work I&apos;ve built and contributed to.</p>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
         {projects.map((project) => (
@@ -93,7 +93,7 @@ export default function Projects() {
             <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{project.description}</p>
 
             <div className="mb-4">
-              <h4 className="text-sm font-medium text-gray-700 mb-2">Technologies:</h4>
+              <h4 className="text-sm font-bold text-gray-700 mb-2">Technologies:</h4>
               <div className="flex flex-wrap gap-1">
                 {project.technologies.map((tech) => (
                   <span key={tech} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
@@ -128,8 +128,8 @@ export default function Projects() {
       </div>
 
       {/* Work Experience Section */}
-      <h2 className="text-3xl font-bold text-gray-800 mt-16 mb-2">Work Experience</h2>
-      <p className="text-gray-500 mb-8">My professional background in software and beyond.</p>
+      <h2 className="text-3xl font-bold text-white-800 mt-16 mb-2">Work Experience</h2>
+      <p className="text-white-500 mb-8">My professional background in software and beyond.</p>
 
       <div className="space-y-8">
         {experience.map((job) => (
