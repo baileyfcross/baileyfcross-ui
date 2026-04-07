@@ -23,6 +23,15 @@ const projects = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "In Progress",
   },
+  {
+    id: 4,
+    title: "Baseball Manager Simulator",
+    description:
+      "Developed a cross-platform 2D baseball management sim in C# with .NET 9 and MonoGame DesktopGL. Structured the codebase into core, simulation, application, infrastructure, and game layers to support live match gameplay, save data, and ongoing feature development.",
+    technologies: ["C#", ".NET 9", "MonoGame", "Simulation", "Clean Architecture"],
+    status: "In Progress",
+    link: "https://github.com/baileyfcross/baseball-manager",
+  },
 ];
 
 const experience = [
@@ -84,36 +93,56 @@ export default function Projects() {
       <p className="text-white-500 mb-8">A selection of work I&apos;ve built and contributed to.</p>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg transition-shadow flex flex-col"
-          >
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{project.description}</p>
+        {projects.map((project) => {
+          const cardContent = (
+            <>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed flex-grow">{project.description}</p>
 
-            <div className="mb-4">
-              <h4 className="text-sm font-bold text-gray-700 mb-2">Technologies:</h4>
-              <div className="flex flex-wrap gap-1">
-                {project.technologies.map((tech) => (
-                  <span key={tech} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
-                    {tech}
-                  </span>
-                ))}
+              <div className="mb-4">
+                <h4 className="text-sm font-bold text-gray-700 mb-2">Technologies:</h4>
+                <div className="flex flex-wrap gap-1">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <span
-              className={`self-start px-2 py-1 text-xs rounded ${
-                project.status === "Completed"
-                  ? "bg-blue-100 text-blue-800"
-                  : "bg-yellow-100 text-yellow-800"
-              }`}
+              <span
+                className={`self-start px-2 py-1 text-xs rounded ${
+                  project.status === "Completed"
+                    ? "bg-blue-100 text-blue-800"
+                    : "bg-yellow-100 text-yellow-800"
+                }`}
+              >
+                {project.status}
+              </span>
+
+              {project.link && <span className="mt-4 text-sm font-medium text-blue-600">View Repository →</span>}
+            </>
+          );
+
+          return project.link ? (
+            <a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col"
             >
-              {project.status}
-            </span>
-          </div>
-        ))}
+              {cardContent}
+            </a>
+          ) : (
+            <div
+              key={project.id}
+              className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg transition-shadow flex flex-col"
+            >
+              {cardContent}
+            </div>
+          );
+        })}
       </div>
 
       <div className="mb-6 text-center">
