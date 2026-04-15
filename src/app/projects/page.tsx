@@ -1,30 +1,26 @@
+import { link } from "fs";
+
 const projects = [
   {
-    id: 1,
-    title: "NASA Chikungunya Outbreak Graph Database",
+    id: 0,
+    title: "MPI + CUDA Game of Life",
     description:
-      "Built a Neo4j graph database integrating NASA weather/time datasets with reported chikungunya outbreak data. Mapped relationships between environmental conditions and outbreak clusters to support pattern detection and research analysis. Designed ingestion pipelines to merge heterogeneous datasets and visualize connections in a graph-first model.",
-    technologies: ["Neo4j", "Graph Databases", "Data Pipelines"],
-    status: "Completed",
-  },
-  {
-    id: 2,
-    title: "Summer Scholar UI & Regex Analysis Project",
-    description:
-      "Blueprinted and implemented a new UI to enhance user experience for a data-driven internal tool. Researched and integrated Typeahead libraries and developed complex regular expression handling. Connected user-generated regex inputs to database-stored values for dynamic search and pattern analysis.",
-    technologies: ["HTML/CSS", "JavaScript", "Regex", "Typeahead"],
-    status: "Completed",
-  },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    description:
-      "A modern personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. Deployed on a self-hosted Ubuntu/Debian home server.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      "Built a hybrid MPI and CUDA implementation of Conway's Game of Life for AiMOS. Partitioned the board across MPI ranks, exchanged halo rows between neighbors, mapped ranks to GPUs, and benchmarked overlap modes to study how communication and computation interact at scale.",
+    technologies: [
+      "C",
+      "MPI",
+      "CUDA",
+      "Parallel Computing",
+      "GPU Programming",
+      "SLURM",
+      "Shell Scripting",
+      "Performance Benchmarking",
+    ],
     status: "In Progress",
+    link: "https://github.com/baileyfcross/mpi-game-of-life",
   },
   {
-    id: 4,
+    id: 1,
     title: "Baseball Manager Simulator",
     description:
       "Developed a cross-platform 2D baseball management sim in C# with .NET 9 and MonoGame DesktopGL. Structured the codebase into core, simulation, application, infrastructure, and game layers to support live match gameplay, save data, and ongoing feature development.",
@@ -32,6 +28,32 @@ const projects = [
     status: "In Progress",
     link: "https://github.com/baileyfcross/baseball-manager",
   },
+  {
+    id: 2,
+    title: "NASA Chikungunya Outbreak Graph Database",
+    description:
+      "Built a Neo4j graph database integrating NASA weather/time datasets with reported chikungunya outbreak data. Mapped relationships between environmental conditions and outbreak clusters to support pattern detection and research analysis. Designed ingestion pipelines to merge heterogeneous datasets and visualize connections in a graph-first model.",
+    technologies: ["Neo4j", "Graph Databases", "Data Pipelines"],
+    status: "Completed",
+  },
+  {
+    id: 3,
+    title: "Summer Scholar UI & Regex Analysis Project",
+    description:
+      "Blueprinted and implemented a new UI to enhance user experience for a data-driven internal tool. Researched and integrated Typeahead libraries and developed complex regular expression handling. Connected user-generated regex inputs to database-stored values for dynamic search and pattern analysis.",
+    technologies: ["HTML/CSS", "JavaScript", "Regex", "Typeahead"],
+    status: "Completed",
+    link:"https://github.com/TravelMapping/EduTools",
+  },
+  {
+    id: 4,
+    title: "Portfolio Website",
+    description:
+      "A modern personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. Deployed on a self-hosted Ubuntu/Debian home server.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    status: "In Progress",
+    website: "https://www.baileyfcross.info/",
+  }
 ];
 
 const experience = [
@@ -121,13 +143,14 @@ export default function Projects() {
               </span>
 
               {project.link && <span className="mt-4 text-sm font-medium text-blue-600">View Repository →</span>}
+              {project.website && <span className="mt-4 text-sm font-medium text-blue-600">View Website →</span>}
             </>
           );
 
-          return project.link ? (
+          return project.link || project.website ? (
             <a
               key={project.id}
-              href={project.link}
+              href={project.link || project.website}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col"
