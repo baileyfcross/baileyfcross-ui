@@ -2,7 +2,7 @@ export default function About() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-white-800 mb-8">About Me</h1>
-      
+
       <div className="max-w-3xl space-y-6">
         <section>
           <h2 className="text-2xl font-semibold text-white-700 mb-4">Who I Am</h2>
@@ -31,7 +31,7 @@ export default function About() {
           <div className="mb-4">
             <h3 className="text-lg font-medium text-white-600 mb-2">Proficient In</h3>
             <div className="flex flex-wrap gap-2">
-              {['Angular', 'Agile', 'C#', 'Java', '.NET', 'TypeScript', 'HTML/CSS/JavaScript', 'Microsoft Suite', 'Oracle DBMS', 'SQL', 'Git', 'GitHub', 'GitLab', 'Unix', 'IntelliJ', 'Jira', 'Confluence', 'Spring', 'Spring Boot'].map((skill) => (
+              {['Angular', 'Agile', 'C', 'C#', 'Java', '.NET', 'TypeScript', 'HTML/CSS/JavaScript', 'Git', 'GitHub', 'GitLab', 'Unix', 'SQL', 'Spring', 'Spring Boot', 'Shell Scripting', 'Parallel Debugging', 'Performance Analysis'].map((skill) => (
                 <span
                   key={skill}
                   className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
@@ -45,7 +45,7 @@ export default function About() {
           <div>
             <h3 className="text-lg font-medium text-white-600 mb-2">Familiar With</h3>
             <div className="flex flex-wrap gap-2">
-              {['AWS', 'Bootstrap', 'C', 'Docker', 'Figma', 'FreeBSD', 'GitHub Actions', 'Jenkins', 'Neo4J', 'PHP', 'PHPStorm', 'Python3', 'Swift', 'UX Design', 'Wireframing', 'React', 'Next.js', 'Node.js', 'MonoGame', 'Game Development', 'Cross-Platform Development', 'Domain Modeling', 'Simulation Systems', 'Graph Databases', 'Data Pipelines', 'Regex', 'Typeahead', 'Tailwind CSS'].map((skill) => (
+              {['AWS', 'Bootstrap', 'CUDA', 'Docker', 'Figma', 'FreeBSD', 'GitHub Actions', 'Jenkins', 'MPI', 'Neo4J', 'Next.js', 'Node.js', 'PHP', 'PHPStorm', 'Python3', 'React', 'SLURM', 'Swift', 'Tailwind CSS', 'Typeahead', 'UX Design', 'Wireframing', 'MonoGame', 'Game Development', 'Cross-Platform Development', 'Domain Modeling', 'Simulation Systems', 'Graph Databases', 'Data Pipelines', 'Regex', 'GPU Programming', 'Distributed Computing'].map((skill) => (
                 <span
                   key={skill}
                   className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
