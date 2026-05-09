@@ -24,7 +24,12 @@ const projects = [
     title: "Baseball Manager Simulator",
     description:
       "Developed a cross-platform 2D baseball management sim in C# with .NET 9 and MonoGame DesktopGL. Structured the codebase into core, simulation, application, infrastructure, and game layers to support live match gameplay, save data, and ongoing feature development.",
-    technologies: ["C#", ".NET 9", "MonoGame", "Simulation", "Clean Architecture"],
+    technologies: [
+      "C#", 
+      ".NET 9", 
+      "MonoGame", 
+      "Simulation", 
+      "Clean Architecture"],
     status: "In Progress",
     link: "https://github.com/baileyfcross/baseball-manager",
   },
@@ -33,7 +38,10 @@ const projects = [
     title: "NASA Chikungunya Outbreak Graph Database",
     description:
       "Built a Neo4j graph database integrating NASA weather/time datasets with reported chikungunya outbreak data. Mapped relationships between environmental conditions and outbreak clusters to support pattern detection and research analysis. Designed ingestion pipelines to merge heterogeneous datasets and visualize connections in a graph-first model.",
-    technologies: ["Neo4j", "Graph Databases", "Data Pipelines"],
+    technologies: [
+      "Neo4j", 
+      "Graph Databases", 
+      "Data Pipelines"],
     status: "Completed",
   },
   {
@@ -41,7 +49,11 @@ const projects = [
     title: "Summer Scholar UI & Regex Analysis Project",
     description:
       "Blueprinted and implemented a new UI to enhance user experience for a data-driven internal tool. Researched and integrated Typeahead libraries and developed complex regular expression handling. Connected user-generated regex inputs to database-stored values for dynamic search and pattern analysis.",
-    technologies: ["HTML/CSS", "JavaScript", "Regex", "Typeahead"],
+    technologies: [
+      "HTML/CSS", 
+      "JavaScript", 
+      "Regex", 
+      "Typeahead"],
     status: "Completed",
     link:"https://github.com/TravelMapping/EduTools",
   },
@@ -49,10 +61,38 @@ const projects = [
     id: 4,
     title: "Portfolio Website",
     description:
-      "A modern personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. Deployed on a self-hosted Ubuntu/Debian home server.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "In Progress",
+      "A modern personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. Deployed on Azure.",
+    technologies: [
+      "Next.js", 
+      "TypeScript", 
+      "Tailwind CSS",
+      "API Fetching",
+      "API Design",
+      "API Integration",
+      "Azure Deployment",
+    ],
+    status: "Ongoing Progress",
     website: "https://www.baileyfcross.info/",
+  },
+  {
+    id: 5,
+    title: "monkeyhacks.com",
+    description:
+      "A Counter-Strike 2 website that tracks skin prices and has fun games. Built with Vue.js, Express and Azure.",
+    technologies: [
+      "Vue.js",
+      "Express",
+      "Azure Deployment",
+      "Azure Management",
+      "Typescript",
+      "NPM",
+      "Node.js",
+      "API Fetching",
+      "API Design",
+      "API Integration",
+    ],
+    status: "Ongoing Progress",
+    website: "https://www.monkeyhacks.com/",
   }
 ];
 
