@@ -31,13 +31,23 @@ export default function Home() {
       {/* Quick Links Section */}
       <section className="py-16">
         <h2 className="text-3xl font-bold text-center text-white-800 mb-12">Explore My World</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
           <Link href="/about" className="group">
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
               <div className="text-4xl mb-4">👋</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">About Me</h3>
               <p className="text-gray-600">
                 Learn about my background, journey, and the skills I bring to every project.
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/teaching" className="group">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
+              <div className="text-4xl mb-4">🎓</div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Teaching</h3>
+              <p className="text-gray-600">
+                Explore the computing courses I teach and the research experience that supports my classroom approach.
               </p>
             </div>
           </Link>
