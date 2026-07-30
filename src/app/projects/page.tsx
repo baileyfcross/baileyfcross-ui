@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 const projects = [
   {
     id: 0,

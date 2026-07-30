@@ -11,6 +11,7 @@ export default function Navigation() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Teaching', href: '/teaching' },
     { name: 'Projects', href: '/projects' },
     { name: 'Hobbies', href: '/hobbies' },
   ];
