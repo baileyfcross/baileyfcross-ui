@@ -1,135 +1,93 @@
-# Bailey Cross - Portfolio Website
+# Bailey Cross / Seasonal Workspace
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+A personal portfolio presented as a cozy desktop: page windows, original pixel icons, notebook pages, a Start menu, and seasonal landscape artwork. Built with the existing Next.js App Router, React, TypeScript, and Tailwind CSS. Existing About, Teaching, Projects, Hobbies, research, work history, and external links are retained.
 
-## Features
+## Install using GitHub drag and drop
 
-- **Modern Stack**: Built with Next.js 16.2, TypeScript, and Tailwind CSS
-- **Responsive Design**: Mobile-first approach with responsive navigation
-- **SEO Optimized**: Proper metadata and semantic HTML structure
-- **Fast Loading**: Static site generation for optimal performance
-- **Portfolio Sections**:
-  - Home: Introduction and overview
-  - About Me: Background, journey, and skills
-  - Projects: Showcase of development work
-  - Hobbies: Personal interests and activities
+1. Extract this ZIP on your computer. Open the extracted folder containing `package.json`, `src`, `public`, and `scripts`.
+2. Open your existing `baileyfcross/baileyfcross-ui` repository and select the branch you want to update. The existing Azure workflow deploys the `production` branch.
+3. At the repository root, choose **Add file > Upload files**.
+4. Drag all the extracted files and folders into the upload area. Drag the contents, not the enclosing ZIP or folder. Keep the folder structure intact.
+5. Commit the upload directly to your selected branch or use GitHub's option to create a branch and pull request for review.
+6. For the public website to update, the changes must reach `production` and its Azure deployment must succeed.
 
-## Project Structure
+This package contains the source directly at the ZIP root. It excludes `node_modules`, build output, patches, the separate course application's source, and GitHub workflow files. Your existing Azure deployment workflow stays in place. Existing repository files with matching paths are replaced by the uploaded versions; unrelated files remain.
 
-```
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── about/page.tsx     # About page
-│   │   ├── projects/page.tsx  # Projects showcase
-│   │   ├── hobbies/page.tsx   # Hobbies and interests
-│   │   ├── layout.tsx         # Root layout with navigation
-│   │   └── page.tsx           # Home page
-│   └── components/            # Reusable components
-│       └── Navigation.tsx     # Main navigation component
-├── public/                    # Static assets
-├── package.json              # Dependencies and scripts
-└── tailwind.config.ts        # Tailwind CSS configuration
+The course portal has already been updated separately at https://courses.baileyfcross.info/. This package updates the personal website and its links to that portal.
+
+## Run locally
+
+Use Node.js 22 LTS (minimum 20.9) and npm.
+
+```sh
+npm ci
+npm run dev
 ```
 
-## Getting Started
+Visit the address printed by Next.js. `scripts/dev.mjs` accepts normal Next.js arguments and maps the preview tool's `--host` to Next's `--hostname`.
 
-### Prerequisites
+```sh
+npm test              # seasonal calendar and browser-runtime behavior
+npm run typecheck
+npm run build         # static export in out/
+npm start             # serve the exported site locally (build first)
+```
 
-- Node.js 18+ and npm
-- Git
+The predev/prebuild hooks generate the pre-paint season calculator. If you change the calendar logic while the development server is already running, rerun `npm run predev` and reload.
 
-### Installation
+## Automatic seasons
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd workspace
-   ```
+| Season | Theme              | Starts at midnight Eastern on the date of |
+| ------ | ------------------ | ----------------------------------------- |
+| Spring | Rose & Sage        | March equinox                             |
+| Summer | Moss & Honey       | June solstice                             |
+| Fall   | Terracotta & Peach | September equinox                         |
+| Winter | Midnight & Ice     | December solstice                         |
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+`src/lib/seasons.ts` uses Astronomy Engine to calculate each year's astronomical boundaries locally. It converts the event's instant to an **America/New_York calendar date** and applies the theme from the beginning of that day, as requested. January continues the preceding winter. The visitor's location and operating-system appearance do not change the season.
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+The pre-paint runtime is embedded in the document head and runs in the visitor's browser, so a static export built in July still switches in September, December, and subsequent years. It schedules the next Eastern midnight, including 23- and 25-hour DST days, and refreshes after tab visibility, focus, and page restoration. No weather service, annual lookup table, scheduled job, backend, or seasonal redeployment is required. The visitor's device clock must be correct. Without JavaScript, the readable summer fallback and ordinary page links remain available.
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the website
+The taskbar's season indicator explains the four themes. It does not save a manual override.
 
-### Available Scripts
+## Code organization
 
-- `npm run dev` - Start development server with hot reloading
-- `npm run build` - Create production build
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint for code quality
+- `src/components/desktop/`: workspace shell, movable home windows, window controls, Start menu, clock, SVG pixel icons, and seasonal status.
+- `src/data/`: existing project, work experience, teaching, research, and hobby content. Edit these arrays to update content.
+- `src/data/site.ts`: portfolio links and course portal URLs.
+- `src/app/`: route content. All original routes remain available; `/courses/` provides portal and instructor links.
+- `src/styles/season-tokens.css`: all four palettes, mirrored in the separately hosted course portal.
+- `public/desktop/seasons-atlas.webp`: four seasonal landscapes in a single 629 KB image. See its asset README for layout and provenance.
+- `src/lib/season-runtime.ts` and `scripts/build-season-runtime.mjs`: single pre-paint runtime. `src/lib/season-boot.ts` and `public/desktop/season-runtime.js` are generated; edit the source, not those outputs.
+- `tests/`: boundary dates, timezone differences, leap years, DST timing, automatic updates, and restored tabs.
 
-## Deployment
+Home windows can be dragged within a bounded area using a mouse. Double-click their title bar to reset position. Minimize puts the main page in the taskbar; its taskbar button restores it. Maximize expands the main window. Other pages can be closed back to Home. On small screens, windows stack and dragging is disabled. Keyboard navigation, focus indicators, a skip link, reduced motion, and print styles are included.
 
-### For Ubuntu/Debian Home Server
+## Course subdomain
 
-1. **Build the project**:
-   ```bash
-   npm run build
-   ```
+`courses.baileyfcross.info` is a **separate, existing login-protected course application**, not a route served by this static portfolio. The portfolio links to it from the shortcuts, navigation, taskbar, home teaching window, Teaching page, and `/courses/` landing page. Instructor access remains at `/dashboard` on that portal.
 
-2. **Start production server**:
-   ```bash
-   npm run start
-   # Server will run on http://localhost:3000
-   ```
+The portal received the same calculated calendar runtime, palette tokens, landscape atlas, window frame, and seasonal taskbar in its own source repository. Its catalog API, database, access policy, instructor authentication, semester archive, course editing, copying, and resource links are retained. It is intentionally not replaced with a static copy in this repository.
 
-3. **Using PM2 for process management** (recommended):
-   ```bash
-   npm install -g pm2
-   pm2 start npm --name "portfolio" -- start
-   pm2 startup  # Enable auto-restart on server reboot
-   pm2 save
-   ```
+The alternate portal URL is `https://bailey-cross-courses.flowerybrownie.chatgpt.site/`. It is available on the Teaching and Courses pages as an alternate address. The course domain and HTTPS certificate were confirmed active during this update. The primary course URL can be configured at build time with `NEXT_PUBLIC_COURSES_URL`; otherwise it defaults to `https://courses.baileyfcross.info/`.
 
-4. **Nginx reverse proxy** (optional):
-   ```nginx
-   server {
-       listen 80;
-       server_name your-domain.com;
-       
-       location / {
-           proxy_pass http://localhost:3000;
-           proxy_http_version 1.1;
-           proxy_set_header Upgrade $http_upgrade;
-           proxy_set_header Connection 'upgrade';
-           proxy_set_header Host $host;
-           proxy_cache_bypass $http_upgrade;
-       }
-   }
-   ```
+A link or DNS record alone cannot provision HTTPS or route one hosted application to another. The custom-domain binding belongs to the course hosting service. Keep its DNS target and verification records there; do not point the course hostname at the portfolio's Azure deployment.
 
-## Customization
+When changing seasonal behavior later, mirror these portfolio files into the portal's equivalents:
 
-### Content Updates
+| Portfolio                           | Course portal                |
+| ----------------------------------- | ---------------------------- |
+| `src/lib/seasons.ts`                | `seasonal/seasons.ts`        |
+| `src/lib/season-runtime.ts`         | `seasonal/season-runtime.ts` |
+| `src/styles/season-tokens.css`      | `app/season-tokens.css`      |
+| `public/desktop/seasons-atlas.webp` | same path                    |
 
-1. **Personal Information**: Edit the name and details in:
-   - `src/app/page.tsx` (hero section)
-   - `src/components/Navigation.tsx` (brand name)
-   - `src/app/layout.tsx` (metadata)
+Run each application's prebuild/build hook to regenerate its embedded calculator. Routine season changes require no work in either application.
 
-2. **About Page**: Update `src/app/about/page.tsx` with your background and skills
+## Azure deployment
 
-3. **Projects**: Modify the projects array in `src/app/projects/page.tsx`
+The existing Azure workflow deploys **production**. `npm run build` exports `out/`, including `staticwebapp.config.json`. Keep `output: 'export'` and `trailingSlash: true` in `next.config.ts`. The static-host configuration redirects old slashless routes to their exported directories and serves the exported 404 page for missing files. There is no catch-all homepage rewrite that would hide broken asset paths.
 
-4. **Hobbies**: Update the hobbies array in `src/app/hobbies/page.tsx`
+Upload this package at the repository root using the steps above. Review the changes and commit them to `production`, or merge a reviewed feature branch into `production`. The existing deployment secret and Azure application are unchanged. A merge into `main` by itself does not publish the Azure production site.
 
-### Styling
-
-- **Colors**: Modify color scheme in `tailwind.config.ts`
-- **Components**: Update styling in individual component files
-- **Global styles**: Edit `src/app/globals.css`
-
-## Technology Stack
-
-- **Framework**: Next.js 16.2 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Package Manager**: npm
-- **Deployment**: Static site generation ready
+The course application is deployed separately with its existing hosting workflow and private access preserved.

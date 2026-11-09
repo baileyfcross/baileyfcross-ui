@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {"route":"/about", "redirect":"/about/", "statusCode":301},
+    {"route":"/teaching", "redirect":"/teaching/", "statusCode":301},
+    {"route":"/projects", "redirect":"/projects/", "statusCode":301},
+    {"route":"/hobbies", "redirect":"/hobbies/", "statusCode":301},
+    {"route":"/courses", "redirect":"/courses/", "statusCode":301}
+  ],
+  "responseOverrides": {"404":{"rewrite":"/404.html"}},
+  "globalHeaders": {
+    "X-Content-Type-Options":"nosniff",
+    "Referrer-Policy":"strict-origin-when-cross-origin"
+  }
+}

@@ -1,0 +1,82 @@
+/* Shared verbatim with the course portal. Summer is the no-JavaScript fallback. */
+:root,
+[data-season='summer'] {
+  --chrome: #263c27;
+  --chrome-light: #48613d;
+  --chrome-text: #fff5d9;
+  --frame: #182b1a;
+  --frame-light: #b3bf7b;
+  --paper: #fff2d4;
+  --paper-deep: #f4e4bc;
+  --paper-card: #fff6e2;
+  --ink: #213724;
+  --muted: #58603d;
+  --accent: #8d5a0a;
+  --rule: #c4b77f;
+  --grid-line: #a5a06419;
+  --icon-main: #c49431;
+  --icon-light: #f4d78c;
+  --icon-shine: #ffedbd;
+  --sticky: #eedb9b;
+  --landscape-position: 100% 0%;
+}
+[data-season='spring'] {
+  --chrome: #344e40;
+  --chrome-light: #607b63;
+  --chrome-text: #fff1e6;
+  --frame: #293f31;
+  --frame-light: #c7b69b;
+  --paper: #fff1e9;
+  --paper-deep: #eedbd4;
+  --paper-card: #fff7f0;
+  --ink: #293e32;
+  --muted: #626451;
+  --accent: #9b4457;
+  --rule: #c6ac9f;
+  --grid-line: #a49b7d1a;
+  --icon-main: #bc7f89;
+  --icon-light: #f3beb7;
+  --icon-shine: #ffe0d6;
+  --sticky: #eed5cf;
+  --landscape-position: 0% 0%;
+}
+[data-season='fall'] {
+  --chrome: #612c29;
+  --chrome-light: #88453b;
+  --chrome-text: #fff1dc;
+  --frame: #48221f;
+  --frame-light: #d6a67f;
+  --paper: #fff0da;
+  --paper-deep: #f2d7ba;
+  --paper-card: #fff6e8;
+  --ink: #4d2823;
+  --muted: #725246;
+  --accent: #a14520;
+  --rule: #cda68b;
+  --grid-line: #b58d6f1a;
+  --icon-main: #c47a45;
+  --icon-light: #efbd85;
+  --icon-shine: #ffdbad;
+  --sticky: #f1ce9d;
+  --landscape-position: 0% 100%;
+}
+[data-season='winter'] {
+  --chrome: #15324c;
+  --chrome-light: #365b77;
+  --chrome-text: #edf9ff;
+  --frame: #0c253c;
+  --frame-light: #8eb8d0;
+  --paper: #eaf4fa;
+  --paper-deep: #d4e6f2;
+  --paper-card: #f3f9fd;
+  --ink: #17324c;
+  --muted: #4d6478;
+  --accent: #245d8c;
+  --rule: #9dbacb;
+  --grid-line: #6f9cba1c;
+  --icon-main: #659bc2;
+  --icon-light: #b4d9f2;
+  --icon-shine: #e1f5ff;
+  --sticky: #d1e5f1;
+  --landscape-position: 100% 100%;
+}
