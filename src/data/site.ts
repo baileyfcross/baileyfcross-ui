@@ -12,6 +12,7 @@ export const navigation = [
   { name: 'About', href: '/about/', icon: 'person' },
   { name: 'Teaching', href: '/teaching/', icon: 'book' },
   { name: 'Projects', href: '/projects/', icon: 'folder' },
+  { name: 'Game of Life', href: '/game-of-life/', icon: 'life' },
   { name: 'Hobbies', href: '/hobbies/', icon: 'mountain' },
   { name: 'Courses', href: site.courses, icon: 'book' },
   { name: 'Game Studio', href: site.studio, icon: 'game' },

@@ -2,6 +2,16 @@ import type { CSSProperties } from 'react';
 
 // Original grid-based icons. Kept as vectors for crisp edges at every scale.
 const shapes: Record<string, React.ReactNode> = {
+  life: (
+    <>
+      <path d="M2 2h28v28H2z" fill="var(--icon-main)" />
+      <path d="M4 4h24v24H4z" fill="var(--paper)" />
+      <path
+        d="M12 6h6v6h-6zM20 14h6v6h-6zM4 22h6v6H4zM12 22h6v6h-6zM20 22h6v6h-6z"
+        fill="var(--chrome)"
+      />
+    </>
+  ),
   folder: (
     <>
       <path d="M2 7h8l2 3h18v18H2z" fill="var(--icon-light)" />
