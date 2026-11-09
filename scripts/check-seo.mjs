@@ -3,7 +3,15 @@ import { readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const origin = 'https://www.baileyfcross.info';
-const paths = ['/', '/about/', '/teaching/', '/projects/', '/hobbies/', '/courses/'];
+const paths = [
+  '/',
+  '/about/',
+  '/teaching/',
+  '/projects/',
+  '/hobbies/',
+  '/courses/',
+  '/game-of-life/',
+];
 const descriptions = new Set(),
   titles = new Set();
 const decode = (s) =>

@@ -13,6 +13,11 @@ export default function Projects() {
         A selection of work I&apos;ve built and contributed to, from software and simulation to
         research.
       </PageHeader>
+      <div className="page-footer-link">
+        <a className="desktop-button" href="/game-of-life/">
+          ▶ Play Game of Life
+        </a>
+      </div>
       <div className="content-grid">
         {projects.map((project, i) => {
           const content = (

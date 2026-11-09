@@ -5,6 +5,14 @@ import { courses, teachingProjects } from '../data/teaching';
 
 export const SITE_ORIGIN = 'https://www.baileyfcross.info';
 export const seoPages = {
+  life: {
+    path: '/game-of-life/',
+    label: 'Game of Life',
+    title: "Conway's Game of Life | Bailey Cross",
+    description:
+      'Play Conway’s Game of Life, draw patterns, and explore board output from Bailey Cross’s MPI and CUDA parallel computing project.',
+    card: 'projects',
+  },
   home: {
     path: '/',
     label: 'Home',

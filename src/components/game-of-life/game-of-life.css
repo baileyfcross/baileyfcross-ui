@@ -1,0 +1,101 @@
+.life-app {
+  min-width: 0;
+}
+.life-toolbar,
+.life-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+.life-app button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.life-app label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+}
+.life-app select,
+.life-app textarea,
+.life-app input[type='file'] {
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  padding: 8px;
+  max-width: 100%;
+}
+.life-app input {
+  accent-color: var(--accent);
+}
+.life-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+}
+.life-stats span {
+  padding: 12px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.life-stats strong {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.life-viewport {
+  max-width: 100%;
+  height: 440px;
+  overflow: auto;
+  border: 2px solid var(--frame);
+  background: var(--paper-deep);
+  padding: 10px;
+}
+.life-viewport canvas {
+  display: block;
+  max-width: none;
+  touch-action: none;
+  cursor: crosshair;
+  image-rendering: pixelated;
+}
+.life-hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+.life-import {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper-card);
+}
+.life-import summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.life-import textarea {
+  display: block;
+  width: 100%;
+  min-height: 140px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+.life-import label {
+  margin-top: 12px;
+}
+@media (max-width: 600px) {
+  .life-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .life-viewport {
+    height: 340px;
+  }
+}
