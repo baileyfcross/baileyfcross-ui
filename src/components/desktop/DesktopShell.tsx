@@ -42,7 +42,9 @@ export default function DesktopShell({ children }: { children: ReactNode }) {
   const current = navigation.find(
     (item) => item.href.replace(/\/$/, '') === pathname.replace(/\/$/, ''),
   );
-  const title = current?.name || 'Workspace';
+  const title =
+    current?.name ||
+    (pathname.replace(/\/$/, '') === '/game-of-life' ? 'Game of Life' : 'Workspace');
   const home = pathname === '/';
   function minimize() {
     setMinimized(true);
