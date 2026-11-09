@@ -1,6 +1,10 @@
+import { pageMetadata } from '@/lib/seo';
+import PageSeo from '@/components/seo/PageSeo';
+export const metadata = pageMetadata('about');
 export default function About() {
   return (
     <div className="content-page">
+      <PageSeo page="about" />
       <header className="page-header">
         <span className="eyebrow">01 / A LITTLE ABOUT ME</span>
         <h1>About Me</h1>

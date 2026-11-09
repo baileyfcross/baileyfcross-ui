@@ -1,12 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
+import PageSeo from '@/components/seo/PageSeo';
 import { projects, experience } from '@/data/projects';
 import { site } from '@/data/site';
 import PageHeader from '@/components/desktop/PageHeader';
 import Tags from '@/components/desktop/Tags';
-export const metadata: Metadata = { title: 'Projects' };
+export const metadata = pageMetadata('projects');
 export default function Projects() {
   return (
     <div className="content-page">
+      <PageSeo page="projects" />
       <PageHeader index="03 / THE PROJECT FOLDER" title="Things I've been building.">
         A selection of work I&apos;ve built and contributed to, from software and simulation to
         research.
@@ -34,6 +36,7 @@ export default function Projects() {
           return project.link || project.website ? (
             <a
               key={project.id}
+              id={`project-${project.id}`}
               className="content-card"
               href={project.link || project.website}
               target="_blank"
@@ -42,7 +45,7 @@ export default function Projects() {
               {content}
             </a>
           ) : (
-            <article key={project.id} className="content-card">
+            <article key={project.id} id={`project-${project.id}`} className="content-card">
               {content}
             </article>
           );

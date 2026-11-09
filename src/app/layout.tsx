@@ -1,20 +1,50 @@
 import type { Metadata } from 'next';
+import { SITE_ORIGIN, seoPages } from '@/lib/seo';
 import { SEASON_BOOT } from '@/lib/season-boot';
 import './globals.css';
 import Workspace from '@/components/desktop/Workspace';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.baileyfcross.info'),
-  title: { default: 'Bailey Cross | Personal Workspace', template: '%s | Bailey Cross' },
-  description:
-    'Software, computing education, and game development. Explore Bailey Cross’s personal workspace, projects, teaching, and course directory.',
-  authors: [{ name: 'Bailey Cross' }],
-  openGraph: {
-    title: 'Bailey Cross | Personal Workspace',
-    description: 'Build things. Teach computing. Stay curious.',
-    type: 'website',
+  metadataBase: new URL(SITE_ORIGIN),
+  applicationName: 'Bailey Cross',
+  title: {
+    default: 'Bailey Cross | Software Developer & Computing Educator',
+    template: '%s | Bailey Cross',
+  },
+  description: seoPages.home.description,
+  authors: [{ name: 'Bailey Cross', url: SITE_ORIGIN }],
+  creator: 'Bailey Cross',
+  publisher: 'Bailey Cross',
+  category: 'technology',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icons/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+  manifest: '/manifest.webmanifest',
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.BING_SITE_VERIFICATION
+      ? { other: { 'msvalidate.01': process.env.BING_SITE_VERIFICATION } }
+      : {}),
   },
 };
+export const viewport = { width: 'device-width', initialScale: 1, themeColor: '#263c27' };
 // Generated before dev/build. Inline the small bundled calculator to select the
 // correct theme before paint, even when this HTML was exported months earlier.
 export default function RootLayout({ children }: { children: React.ReactNode }) {

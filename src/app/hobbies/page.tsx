@@ -1,13 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
+import PageSeo from '@/components/seo/PageSeo';
 import { hobbies } from '@/data/hobbies';
 import { site } from '@/data/site';
 import PageHeader from '@/components/desktop/PageHeader';
 import PixelIcon from '@/components/desktop/PixelIcon';
-export const metadata: Metadata = { title: 'Hobbies' };
 const icons = ['mountain', 'book', 'mountain', 'game', 'folder', 'computer'];
+export const metadata = pageMetadata('hobbies');
 export default function Hobbies() {
   return (
     <div className="content-page">
+      <PageSeo page="hobbies" />
       <PageHeader index="04 / AWAY FROM THE KEYBOARD" title="Curiosity, off screen.">
         When I&apos;m not coding, I enjoy exploring various interests and hobbies. These activities
         help me stay creative and often inspire my work.

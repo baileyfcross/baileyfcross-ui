@@ -1,16 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
+import PageSeo from '@/components/seo/PageSeo';
 import { courses, researchEntries } from '@/data/teaching';
 import { site } from '@/data/site';
 import PageHeader from '@/components/desktop/PageHeader';
 import PixelIcon from '@/components/desktop/PixelIcon';
 import Tags from '@/components/desktop/Tags';
-export const metadata: Metadata = {
-  title: 'Teaching',
-  description: 'Computing courses, class resources, and related research by Bailey Cross.',
-};
+export const metadata = pageMetadata('teaching');
 export default function Teaching() {
   return (
     <div className="content-page">
+      <PageSeo page="teaching" />
       <PageHeader index="02 / INSIDE THE CLASSROOM" title="Ideas into understanding.">
         My goal is to give students a practical foundation they can use in future courses,
         professional work, and their own projects.

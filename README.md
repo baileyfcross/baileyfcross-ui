@@ -2,19 +2,6 @@
 
 A personal portfolio presented as a cozy desktop: page windows, original pixel icons, notebook pages, a Start menu, and seasonal landscape artwork. Built with the existing Next.js App Router, React, TypeScript, and Tailwind CSS. Existing About, Teaching, Projects, Hobbies, research, work history, and external links are retained.
 
-## Install using GitHub drag and drop
-
-1. Extract this ZIP on your computer. Open the extracted folder containing `package.json`, `src`, `public`, and `scripts`.
-2. Open your existing `baileyfcross/baileyfcross-ui` repository and select the branch you want to update. The existing Azure workflow deploys the `production` branch.
-3. At the repository root, choose **Add file > Upload files**.
-4. Drag all the extracted files and folders into the upload area. Drag the contents, not the enclosing ZIP or folder. Keep the folder structure intact.
-5. Commit the upload directly to your selected branch or use GitHub's option to create a branch and pull request for review.
-6. For the public website to update, the changes must reach `production` and its Azure deployment must succeed.
-
-This package contains the source directly at the ZIP root. It excludes `node_modules`, build output, patches, the separate course application's source, and GitHub workflow files. Your existing Azure deployment workflow stays in place. Existing repository files with matching paths are replaced by the uploaded versions; unrelated files remain.
-
-The course portal has already been updated separately at https://courses.baileyfcross.info/. This package updates the personal website and its links to that portal.
-
 ## Run locally
 
 Use Node.js 22 LTS (minimum 20.9) and npm.
@@ -88,6 +75,10 @@ Run each application's prebuild/build hook to regenerate its embedded calculator
 
 The existing Azure workflow deploys **production**. `npm run build` exports `out/`, including `staticwebapp.config.json`. Keep `output: 'export'` and `trailingSlash: true` in `next.config.ts`. The static-host configuration redirects old slashless routes to their exported directories and serves the exported 404 page for missing files. There is no catch-all homepage rewrite that would hide broken asset paths.
 
-Upload this package at the repository root using the steps above. Review the changes and commit them to `production`, or merge a reviewed feature branch into `production`. The existing deployment secret and Azure application are unchanged. A merge into `main` by itself does not publish the Azure production site.
+Apply the supplied patch on a feature branch (or copy the supplied source), review it, then merge the changes into `production` through your normal GitHub workflow. The connected GitHub integration denied branch writes, so no remote branch or pull request was created during this update. The existing deployment secret and Azure application are unchanged. A merge into `main` by itself does not publish the Azure production site.
 
 The course application is deployed separately with its existing hosting workflow and private access preserved.
+
+## Search and social sharing
+
+See `SEO_SETUP.md` for Google/Bing verification, sitemap submission, page targets, canonical rules, and maintenance. Each public page has dedicated metadata, canonical URL, JSON-LD, and sharing image. The public sitemap is `/sitemap.xml`; crawler instructions are `/robots.txt`. Private course pages are excluded. `npm run build` automatically checks the exported HTML, sitemap, social image dimensions, schema, and 404 indexing rule. The prior dependency security fixes are retained.

@@ -1,9 +1,13 @@
+import { pageMetadata } from '@/lib/seo';
+import PageSeo from '@/components/seo/PageSeo';
 import Link from 'next/link';
 import { site } from '@/data/site';
 import PixelIcon from '@/components/desktop/PixelIcon';
+export const metadata = pageMetadata('home');
 export default function Home() {
   return (
     <div className="home-notebook">
+      <PageSeo page="home" />
       <div className="notebook-heading">
         <span className="eyebrow">A FEW NOTES FROM MY CORNER OF THE WEB</span>
         <span className="page-number">01 / HOME</span>
