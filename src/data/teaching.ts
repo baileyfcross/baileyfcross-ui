@@ -17,6 +17,17 @@ type ResearchEntry = {
   link?: string;
 };
 
+type TeachingProject = {
+  title: string;
+  category: 'knowledge' | 'simulation';
+  kind: string;
+  affiliation: string;
+  description: string;
+  tags: string[];
+  href: string;
+  linkLabel: string;
+};
+
 export const courses: Course[] = [
   {
     code: 'CSC 111',
@@ -47,6 +58,53 @@ export const courses: Course[] = [
       'A hands-on introduction to office applications for computers and mobile devices. Students develop practical skills with cloud applications, file management, word processing, spreadsheets, presentations, accessibility, and the ethical use of generative AI in the workplace.',
     topics: ['Microsoft 365', 'Cloud Applications', 'Spreadsheets', 'Digital Literacy'],
     courseLink: 'https://andromeda.ccv.vsc.edu/Learn/Grid/Subject.cfm?subject=CIS',
+  },
+];
+
+export const teachingProjects: TeachingProject[] = [
+  {
+    title: 'Zettelkasten',
+    category: 'knowledge',
+    kind: 'PERSONAL KNOWLEDGE SYSTEM',
+    affiliation: 'Independent research & teaching',
+    description:
+      'My linked-note knowledge system helps me connect material across computer science, software development, and research. I use its Markdown and Obsidian workflow as a foundation for source retrieval, local AI experiments, and preparing course materials.',
+    tags: ['Obsidian', 'Markdown', 'Knowledge Management', 'Local AI', 'RAG'],
+    href: 'https://github.com/baileyfcross/Zettelkasten',
+    linkLabel: 'View Zettelkasten repository',
+  },
+  {
+    title: 'Lecture SLM',
+    category: 'knowledge',
+    kind: 'EDUCATIONAL AI PROJECT',
+    affiliation: 'Independent teaching development',
+    description:
+      'A local lecture-generation system that keeps instructor style, source knowledge, course profiles, and class history separate. It uses retrieval and a staged planning and writing workflow to draft educational material that can be reviewed against its sources.',
+    tags: ['Python', 'Local LLMs', 'Retrieval', 'Instructional Design', 'Ollama'],
+    href: 'https://github.com/baileyfcross/lecture-sml',
+    linkLabel: 'View Lecture SLM repository',
+  },
+  {
+    title: 'Pro Football Dynasty',
+    category: 'simulation',
+    kind: 'BROWSER SIMULATOR',
+    affiliation: 'SyracuseGameStudio',
+    description:
+      'A browser-based professional football management prototype focused on building a fictional franchise. Manage rosters, contracts, scouting, and the draft as the league develops across seasons.',
+    tags: ['Sports Simulation', 'Football', 'Franchise Management', 'Browser Game'],
+    href: 'https://syracusegamestudio.org/ProFootballDynasty/',
+    linkLabel: 'Open Pro Football Dynasty',
+  },
+  {
+    title: 'Pro Basketball Dynasty',
+    category: 'simulation',
+    kind: 'BROWSER SIMULATOR',
+    affiliation: 'SyracuseGameStudio',
+    description:
+      'A professional basketball management simulator exploring roster construction, player development, scouting, and rotation decisions alongside a live match simulation.',
+    tags: ['Sports Simulation', 'Basketball', 'Team Management', 'Browser Game'],
+    href: 'https://syracusegamestudio.org/ProBasketballDynasty/',
+    linkLabel: 'Open Pro Basketball Dynasty',
   },
 ];
 

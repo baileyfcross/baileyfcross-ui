@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { site } from '../data/site';
 import { projects } from '../data/projects';
-import { courses } from '../data/teaching';
+import { courses, teachingProjects } from '../data/teaching';
 
 export const SITE_ORIGIN = 'https://www.baileyfcross.info';
 export const seoPages = {
@@ -24,9 +24,9 @@ export const seoPages = {
   teaching: {
     path: '/teaching/',
     label: 'Teaching',
-    title: 'Computing Courses & Teaching | Bailey Cross',
+    title: 'Computing Courses, Teaching & Research | Bailey Cross',
     description:
-      'Explore Bailey Cross’s computing and computer applications courses, classroom approach, research experience, and links to semester resources and course materials.',
+      'Explore computing courses, my Zettelkasten knowledge system, Lecture SLM educational AI work, sports simulation games, and academic research projects by Bailey Cross.',
     card: 'teaching',
   },
   projects: {
@@ -193,8 +193,24 @@ export function pageStructuredData(key: SeoPageKey) {
         },
       })),
     };
-    webpage.mainEntity = { '@id': list['@id'] };
-    graph.push(list);
+    const projectList = {
+      '@type': 'ItemList',
+      '@id': absoluteUrl('/teaching/#teaching-projects'),
+      name: 'Teaching, local AI, and simulation projects by Bailey Cross',
+      itemListElement: teachingProjects.map((p, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'CreativeWork',
+          name: p.title,
+          description: p.description,
+          url: p.href,
+          keywords: p.tags.join(', '),
+        },
+      })),
+    };
+    webpage.mainEntity = [{ '@id': list['@id'] }, { '@id': projectList['@id'] }];
+    graph.push(list, projectList);
   }
   return { '@context': 'https://schema.org', '@graph': graph };
 }
