@@ -1,54 +1,36 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navigation from "@/components/Navigation";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
+import { SEASON_BOOT } from '@/lib/season-boot';
+import './globals.css';
+import Workspace from '@/components/desktop/Workspace';
 
 export const metadata: Metadata = {
-  title: "Bailey Cross - Portfolio",
-  description: "Welcome to Bailey Cross's portfolio website. Explore my projects, learn about my background, and discover my hobbies.",
-  keywords: ["portfolio", "developer", "projects", "Bailey Cross"],
-  authors: [{ name: "Bailey Cross" }],
-  creator: "Bailey Cross",
+  metadataBase: new URL('https://www.baileyfcross.info'),
+  title: { default: 'Bailey Cross | Personal Workspace', template: '%s | Bailey Cross' },
+  description:
+    'Software, computing education, and game development. Explore Bailey Cross’s personal workspace, projects, teaching, and course directory.',
+  authors: [{ name: 'Bailey Cross' }],
   openGraph: {
-    title: "Bailey Cross - Portfolio",
-    description: "Welcome to Bailey Cross's portfolio website",
-    type: "website",
+    title: 'Bailey Cross | Personal Workspace',
+    description: 'Build things. Teach computing. Stay curious.',
+    type: 'website',
   },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// Generated before dev/build. Inline the small bundled calculator to select the
+// correct theme before paint, even when this HTML was exported months earlier.
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-gray-50">
-        <Navigation />
-        <main className="flex-1">
-          {children}
-        </main>
-        <footer className="bg-white border-t mt-auto">
-          <div className="container mx-auto px-4 py-8">
-            <div className="text-center text-gray-600">
-              <p>&copy; {new Date().getFullYear()} Bailey Cross. All rights reserved.</p>
-              <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
-            </div>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: SEASON_BOOT }} />
+      </head>
+      <body>
+        <Workspace>{children}</Workspace>
+        <noscript>
+          <div className="no-script-note">
+            JavaScript enables automatic seasonal appearance and window controls. All page content
+            and links remain available.
           </div>
-        </footer>
+        </noscript>
       </body>
     </html>
   );

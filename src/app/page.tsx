@@ -1,120 +1,65 @@
-import Link from "next/link";
-
+import Link from 'next/link';
+import { site } from '@/data/site';
+import PixelIcon from '@/components/desktop/PixelIcon';
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      {/* Hero Section */}
-      <section className="text-center py-20">
-        <h1 className="text-5xl font-bold text-white-800 mb-6">
-          Hello, I&apos;m <span className="text-blue-600">Bailey Cross</span>
-        </h1>
-        <p className="text-xl text-blue-600 mb-8 max-w-2xl mx-auto">
-          A passionate developer creating meaningful digital experiences. 
-          Welcome to my portfolio where I showcase my projects, share my journey, and explore my interests.
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Link 
-            href="/projects" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-          >
-            View My Work
-          </Link>
-          <Link 
-            href="/about" 
-            className="border border-gray-300 text-white-700 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-          >
-            Learn About Me
-          </Link>
+    <div className="home-notebook">
+      <div className="notebook-heading">
+        <span className="eyebrow">A FEW NOTES FROM MY CORNER OF THE WEB</span>
+        <span className="page-number">01 / HOME</span>
+      </div>
+      <h1>
+        Bailey Cross<span>.</span>
+      </h1>
+      <p className="home-roles">
+        SOFTWARE DEVELOPER <span>·</span> COMPUTING EDUCATOR <span>·</span> GAME DEVELOPER
+      </p>
+      <div className="notebook-divider" />
+      <div className="home-greeting">
+        <h2>
+          Hello,
+          <br />
+          curious minds.
+        </h2>
+        <div className="botanical" aria-hidden="true">
+          <svg viewBox="0 0 100 210">
+            <path
+              d="M46 205Q65 110 47 12M52 155Q12 150 14 120Q46 120 52 155M54 126Q91 113 87 84Q58 89 54 126M53 89Q20 85 22 58Q51 63 53 89M49 55Q75 41 69 18Q49 27 49 55"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+            />
+            <path
+              d="M51 153Q24 145 16 122M54 125Q75 104 85 87M53 88Q33 74 23 60"
+              fill="none"
+              stroke="currentColor"
+            />
+            <circle cx="47" cy="12" r="7" fill="var(--accent)" />
+            <circle cx="69" cy="18" r="6" fill="var(--icon-light)" />
+          </svg>
         </div>
-      </section>
-
-      {/* Quick Links Section */}
-      <section className="py-16">
-        <h2 className="text-3xl font-bold text-center text-white-800 mb-12">Explore My World</h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
-          <Link href="/about" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
-              <div className="text-4xl mb-4">👋</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">About Me</h3>
-              <p className="text-gray-600">
-                Learn about my background, journey, and the skills I bring to every project.
-              </p>
-            </div>
-          </Link>
-
-          <Link href="/teaching" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
-              <div className="text-4xl mb-4">🎓</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Teaching</h3>
-              <p className="text-gray-600">
-                Explore the computing courses I teach and the research experience that supports my classroom approach.
-              </p>
-            </div>
-          </Link>
-          
-          <Link href="/projects" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
-              <div className="text-4xl mb-4">💻</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">My Projects</h3>
-              <p className="text-gray-600">
-                Explore the applications and solutions I&apos;ve built using various technologies.
-              </p>
-            </div>
-          </Link>
-          
-          <Link href="/hobbies" className="group">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border group-hover:border-blue-200">
-              <div className="text-4xl mb-4">⛷️</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">My Hobbies</h3>
-              <p className="text-gray-600">
-                Discover what I enjoy outside of coding and how it influences my work.
-              </p>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* Skills Preview Section */}
-      <section className="py-16 bg-white rounded-xl shadow-sm border">
-        <div className="max-w-4xl mx-auto px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Technical Skills</h2>
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['Angular', 'Java', 'TypeScript', 'HTML/CSS/JavaScript', 'SQL', 'Git', 'Spring Boot', 'React', 'Next.js', 'Tailwind CSS'].map((skill) => (
-              <span 
-                key={skill} 
-                className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link 
-              href="/about" 
-              className="text-blue-600 hover:text-blue-800 font-medium"
-            >
-              View Full Skill Set →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA Section */}
-      <section className="py-16 text-center">
-        <h2 className="text-3xl font-bold text-white-800 mb-4">Let&apos;s Work Together</h2>
-        <p className="text-white-600 mb-8 max-w-2xl mx-auto">
-          I&apos;m always interested in new opportunities and exciting projects. 
-          Feel free to reach out if you&apos;d like to collaborate or just say hello!
-        </p>
-        <a
-          href="https://www.linkedin.com/in/baileyfcross"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-white"
-        >
-          Get In Touch
+      </div>
+      <p className="home-intro">
+        I build software, teach computing, and create games. This is a place for the projects,
+        ideas, and interests I collect along the way.
+      </p>
+      <div className="home-actions">
+        <Link href="/projects/" className="desktop-button">
+          <PixelIcon name="folder" size={20} />
+          Explore my work ↗
+        </Link>
+        <Link href="/about/" className="notebook-link">
+          A little about me →
+        </Link>
+      </div>
+      <div className="home-footer">
+        <span>
+          <span className="status-dot" /> ALWAYS LEARNING, ALWAYS BUILDING
+        </span>
+        <a href={site.linkedin} target="_blank" rel="noreferrer">
+          Say hello ↗
         </a>
-      </section>
+      </div>
     </div>
   );
 }
