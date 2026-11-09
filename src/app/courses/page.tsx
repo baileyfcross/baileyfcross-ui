@@ -1,10 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
+import PageSeo from '@/components/seo/PageSeo';
 import { site } from '@/data/site';
 import PageHeader from '@/components/desktop/PageHeader';
-export const metadata: Metadata = { title: 'Course Portal' };
+export const metadata = pageMetadata('courses');
 export default function Courses() {
   return (
     <div className="content-page">
+      <PageSeo page="courses" />
       <PageHeader index="05 / YOUR COURSE DIRECTORY" title="A place for every semester.">
         My course directory and instructor workspace live at courses.baileyfcross.info.
       </PageHeader>

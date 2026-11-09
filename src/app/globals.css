@@ -1405,3 +1405,28 @@ a.content-card:hover {
     color: black;
   }
 }
+
+.breadcrumbs {
+  margin: 0 0 19px;
+  font:
+    10px/1.5 'Courier New',
+    monospace;
+  color: var(--muted);
+}
+.breadcrumbs ol {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumbs li {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.breadcrumbs a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
