@@ -1,11 +1,13 @@
 import { pageMetadata } from '@/lib/seo';
 import PageSeo from '@/components/seo/PageSeo';
-import { courses, researchEntries } from '@/data/teaching';
+import { courses, researchEntries, teachingProjects } from '@/data/teaching';
 import { site } from '@/data/site';
 import PageHeader from '@/components/desktop/PageHeader';
 import PixelIcon from '@/components/desktop/PixelIcon';
 import Tags from '@/components/desktop/Tags';
+
 export const metadata = pageMetadata('teaching');
+
 export default function Teaching() {
   return (
     <div className="content-page">
@@ -32,7 +34,7 @@ export default function Teaching() {
           </div>
         </div>
       </section>
-      <section>
+      <section id="course-list">
         <h2>Courses & classroom work</h2>
         <div className="content-grid">
           {courses.map((c) => (
@@ -52,6 +54,70 @@ export default function Teaching() {
               </a>
             </article>
           ))}
+        </div>
+      </section>
+      <section id="teaching-projects">
+        <h2>Teaching tools & knowledge systems</h2>
+        <p>
+          These projects connect my teaching workflow with local AI, source material, and
+          long-term research notes.
+        </p>
+        <div className="content-grid">
+          {teachingProjects
+            .filter((project) => project.category === 'knowledge')
+            .map((project) => (
+              <article className="content-card" key={project.title}>
+                <div className="card-index">
+                  <span>{project.kind}</span>
+                  <span>RESEARCH / TEACHING</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p><strong>{project.affiliation}</strong></p>
+                <p>{project.description}</p>
+                <Tags items={project.tags} />
+                <a
+                  className="card-link"
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={project.linkLabel}
+                >
+                  {project.linkLabel} ↗
+                </a>
+              </article>
+            ))}
+        </div>
+      </section>
+      <section id="simulation-projects">
+        <h2>Simulation game projects</h2>
+        <p>
+          My simulator projects explore decision-making, game systems, and user interfaces.
+          Each game opens directly on SyracuseGameStudio.
+        </p>
+        <div className="content-grid">
+          {teachingProjects
+            .filter((project) => project.category === 'simulation')
+            .map((project) => (
+              <article className="content-card" key={project.title}>
+                <div className="card-index">
+                  <span>{project.kind}</span>
+                  <span>SYRACUSE GAME STUDIO</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p><strong>{project.affiliation}</strong></p>
+                <p>{project.description}</p>
+                <Tags items={project.tags} />
+                <a
+                  className="card-link"
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={project.linkLabel}
+                >
+                  {project.linkLabel} ↗
+                </a>
+              </article>
+            ))}
         </div>
       </section>
       <section>
