@@ -2,14 +2,19 @@ import type { CSSProperties } from 'react';
 
 // Original grid-based icons. Kept as vectors for crisp edges at every scale.
 const shapes: Record<string, React.ReactNode> = {
+  deutschlab: (
+    <>
+      <rect width="32" height="32" rx="7.2" fill="#102b2a" />
+      <g transform="scale(0.4)">
+        <path d="M22 18h19c13 0 21 9 21 22s-8 22-21 22H22V18zm13 12v20h6c6 0 9-4 9-10s-3-10-9-10h-6z" fill="#c4e6ce" />
+      </g>
+    </>
+  ),
   life: (
     <>
       <path d="M2 2h28v28H2z" fill="var(--icon-main)" />
       <path d="M4 4h24v24H4z" fill="var(--paper)" />
-      <path
-        d="M12 6h6v6h-6zM20 14h6v6h-6zM4 22h6v6H4zM12 22h6v6h-6zM20 22h6v6h-6z"
-        fill="var(--chrome)"
-      />
+      <path d="M12 6h6v6h-6zM20 14h6v6h-6zM4 22h6v6H4zM12 22h6v6h-6zM20 22h6v6h-6z" fill="var(--chrome)" />
     </>
   ),
   folder: (
@@ -30,10 +35,7 @@ const shapes: Record<string, React.ReactNode> = {
     <>
       <path d="M2 6h11l3 3 3-3h11v21H19l-3 2-3-2H2z" fill="var(--icon-light)" />
       <path d="M5 9h8v15H5zM19 9h8v15h-8z" fill="var(--paper)" />
-      <path
-        d="M15 9h2v18h-2zM6 12h6v2H6zM20 12h6v2h-6zM6 17h6v2H6zM20 17h6v2h-6z"
-        fill="var(--icon-main)"
-      />
+      <path d="M15 9h2v18h-2zM6 12h6v2H6zM20 12h6v2h-6zM6 17h6v2H6zM20 17h6v2h-6z" fill="var(--icon-main)" />
     </>
   ),
   person: (
@@ -57,10 +59,7 @@ const shapes: Record<string, React.ReactNode> = {
   ),
   sun: (
     <>
-      <path
-        d="M11 8h10v3h3v10h-3v3H11v-3H8V11h3zM14 0h4v5h-4zM14 27h4v5h-4zM0 14h5v4H0zM27 14h5v4h-5zM3 3h4v4H3zM25 3h4v4h-4zM3 25h4v4H3zM25 25h4v4h-4z"
-        fill="currentColor"
-      />
+      <path d="M11 8h10v3h3v10h-3v3H11v-3H8V11h3zM14 0h4v5h-4zM14 27h4v5h-4zM0 14h5v4H0zM27 14h5v4h-5zM3 3h4v4H3zM25 3h4v4h-4zM3 25h4v4H3zM25 25h4v4h-4z" fill="currentColor" />
     </>
   ),
   leaf: (
@@ -70,12 +69,7 @@ const shapes: Record<string, React.ReactNode> = {
     </>
   ),
   snow: (
-    <path
-      d="M16 1v30M3 8l26 16M3 24 29 8M10 4l6 6 6-6M10 28l6-6 6 6M2 14l8-1-2-8M30 18l-8 1 2 8M2 18l8 1-2 8M30 14l-8-1 2-8"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      fill="none"
-    />
+    <path d="M16 1v30M3 8l26 16M3 24 29 8M10 4l6 6 6-6M10 28l6-6 6 6M2 14l8-1-2-8M30 18l-8 1 2 8M2 18l8 1-2 8M30 14l-8-1 2-8" stroke="currentColor" strokeWidth="2.5" fill="none" />
   ),
   blossom: (
     <>
