@@ -34,6 +34,22 @@ export default function Teaching() {
           </div>
         </div>
       </section>
+      <section className="course-portal-callout" aria-labelledby="deutschlab-heading">
+        <PixelIcon name="deutschlab" size={40} />
+        <div>
+          <h2 id="deutschlab-heading">DeutschLab: German learning, one word at a time.</h2>
+          <p>
+            Explore my German learning application with A1–C2 guided lessons, vocabulary
+            flashcards, and grammar-aware immersion. Sign in with Google to access the
+            learning workspace and save progress.
+          </p>
+          <div className="portal-links">
+            <a className="desktop-button" href={site.deutschlab} target="_blank" rel="noopener noreferrer">
+              Open DeutschLab ↗
+            </a>
+          </div>
+        </div>
+      </section>
       <section id="course-list">
         <h2>Courses & classroom work</h2>
         <div className="content-grid">

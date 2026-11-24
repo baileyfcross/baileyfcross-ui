@@ -80,6 +80,15 @@ export const projects = [
     status: 'Ongoing Progress',
     website: 'https://www.monkeyhacks.com/',
   },
+  {
+    id: 6,
+    title: 'DeutschLab',
+    description:
+      'A browser-based German learning platform with A1–C2 guided lessons, word-by-word immersion, vocabulary flashcards, and grammar-aware practice. Learners use Google sign-in and save progress in private Google Drive app data.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Google OAuth', 'Google Drive API', 'Language Learning'],
+    status: 'Ongoing Progress',
+    website: 'https://deutsch.baileyfcross.info/',
+  },
 ];
 
 export const experience = [
