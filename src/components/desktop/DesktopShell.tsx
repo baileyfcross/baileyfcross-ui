@@ -92,6 +92,8 @@ export default function DesktopShell({ children }: { children: ReactNode }) {
               href={item.href}
               key={item.name}
               aria-label={item.href.startsWith('https') ? `${item.name} website` : item.name}
+              target={item.href.startsWith('https') ? '_blank' : undefined}
+              rel={item.href.startsWith('https') ? 'noopener noreferrer' : undefined}
             >
               <PixelIcon name={item.icon} size={37} />
               <span>{item.name}</span>
@@ -163,6 +165,10 @@ export default function DesktopShell({ children }: { children: ReactNode }) {
                   <PixelIcon name="mountain" size={38} />
                   <span>Off screen</span>
                 </Link>
+                <a href={site.deutschlab} target="_blank" rel="noopener noreferrer" aria-label="Open DeutschLab">
+                  <PixelIcon name="deutschlab" size={38} />
+                  <span>DeutschLab</span>
+                </a>
               </div>
             </DesktopWindow>
             <div className="desktop-sticky">
@@ -194,7 +200,13 @@ export default function DesktopShell({ children }: { children: ReactNode }) {
                 Bailey Cross<small>Pick a window to explore.</small>
               </div>
               {navigation.map((item) => (
-                <Link key={item.name} href={item.href} onClick={() => setMenu(false)}>
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMenu(false)}
+                  target={item.href.startsWith('https') ? '_blank' : undefined}
+                  rel={item.href.startsWith('https') ? 'noopener noreferrer' : undefined}
+                >
                   <PixelIcon name={item.icon} size={22} />
                   {item.name}
                   <span>↗</span>
