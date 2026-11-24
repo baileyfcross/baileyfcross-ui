@@ -14,6 +14,7 @@ export const navigation = [
   { name: 'Teaching', href: '/teaching/', icon: 'book' },
   { name: 'Projects', href: '/projects/', icon: 'folder' },
   { name: 'Game of Life', href: '/game-of-life/', icon: 'life' },
+  { name: 'DFA Simulator', href: '/dfa-simulator/', icon: 'fsm' },
   { name: 'Hobbies', href: '/hobbies/', icon: 'mountain' },
   { name: 'Courses', href: site.courses, icon: 'book' },
   { name: 'DeutschLab', href: site.deutschlab, icon: 'deutschlab' },
