@@ -1,28 +1,50 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import PageHeader from '@/components/desktop/PageHeader';
 
-const title = 'DFA Simulator | Bailey Cross';
-const description = 'Explore a deterministic finite-state automaton for CSC-220. Step through binary strings and see how a machine recognizes an even number of ones.';
-const url = 'https://www.baileyfcross.info/dfa-simulator/';
+const simulatorUrl = '/simulations/even-ones-dfa.html';
+
 export const metadata: Metadata = {
-  title: { absolute: title },
-  description,
-  alternates: { canonical: url },
-  openGraph: { title, description, url, type: 'website', images: [{ url: '/social/teaching.png', width: 1200, height: 630, alt: 'DFA Simulator | Bailey Cross' }] },
-  twitter: { card: 'summary_large_image', title, description, images: ['/social/teaching.png'] },
+  title: 'CSC-220 DFA Simulator | Bailey Cross',
+  description:
+    'Explore a two-state deterministic finite automaton that accepts binary strings containing an even number of 1s. Run or step through transitions.',
+  alternates: { canonical: 'https://www.baileyfcross.info/dfa-simulator/' },
 };
 
-export default function DfaSimulatorPage() {
+export default function DFASimulator() {
   return (
     <div className="content-page">
-      <PageHeader index="TEACHING / CSC-220" title="DFA Simulator">
-        Explore a deterministic finite-state automaton that accepts binary strings containing an even number of 1s.
+      <PageHeader index="CSC-220 / FINITE-STATE MACHINES" title="DFA Simulator">
+        Step through a deterministic finite-state automaton that accepts binary strings
+        containing an even number of 1s. Reading 0 keeps the current state; reading 1
+        switches between Even and Odd.
       </PageHeader>
+      <div className="page-footer-link">
+        <a href={simulatorUrl} target="_blank" rel="noopener noreferrer" className="desktop-button">
+          Open simulator in a separate tab ↗
+        </a>
+        <Link href="/teaching/" className="notebook-link">
+          Teaching and research →
+        </Link>
+      </div>
       <iframe
-        src="/simulations/even-ones-dfa.html"
-        title="Even number of 1s finite-state automaton simulator"
-        style={{ display: 'block', width: '100%', height: '1100px', border: 0, background: 'white' }}
+        title="CSC-220 even-number-of-ones DFA interactive simulator"
+        src={simulatorUrl}
+        loading="eager"
+        sandbox="allow-scripts"
+        style={{
+          display: 'block',
+          width: '100%',
+          height: '990px',
+          border: '1px solid var(--rule)',
+          borderRadius: '8px',
+          background: '#f5f7fa',
+        }}
       />
+      <p>
+        The initial state Even is accepting, including for the empty string. No account
+        or data upload is required for this teaching demo.
+      </p>
     </div>
   );
 }
