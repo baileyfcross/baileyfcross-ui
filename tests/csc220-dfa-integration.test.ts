@@ -7,7 +7,7 @@ test('both DeutschLab and CSC-220 DFA desktop shortcuts are present', () => {
   assert.deepEqual(navigation.find((n) => n.name === 'DeutschLab'), {
     name: 'DeutschLab', href: 'https://deutsch.baileyfcross.info/', icon: 'deutschlab',
   });
-  assert.deepEqual(navigation.find((n) => n.name === 'CSC-220 DFA'), {
+  assert.deepEqual(navigation.find((n) => n.name === 'DFA Simulator'), {
     name: 'CSC-220 DFA', href: '/dfa-simulator/', icon: 'fsm',
   });
 });
